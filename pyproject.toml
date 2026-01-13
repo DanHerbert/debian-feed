@@ -1,0 +1,23 @@
+[project]
+version = "1.0.0"
+name = "debian-feed"
+description = "Generate a Debian torrent RSS feed"
+authors = [{name = "danherbert", email = "spam@hrbrt.co"}]
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE.txt"]
+dependencies = [
+  "beautifulsoup4==4.10.0",
+  "feedgen==0.9.0",
+  "feedparser==6.0.12",
+  "lxml==6.0.2",
+  "requests==2.26.0"
+]
+classifiers = [
+  "Development Status :: 5 - stable",
+  "Intended Audience :: System Administrators",
+]
+
+[project.urls]
+repository = "https://github.com/DanHerbert/debian-feed"
+

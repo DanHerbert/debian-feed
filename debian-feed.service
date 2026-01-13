@@ -4,4 +4,4 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/debian-feed /usr/local/etc/debian-feed.json
+ExecStart=/bin/sh -c "exec $APP_ROOT/run.sh 2>&1"

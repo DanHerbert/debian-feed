@@ -2,8 +2,9 @@
 Description=Debian Installer RSS Feed Generator
 
 [Timer]
-OnUnitActiveSec=1d
 Unit=debian-feed.service
+OnBootSec=5m
+OnUnitActiveSec=5m
 
 [Install]
 WantedBy=timers.target

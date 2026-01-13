@@ -1,1 +1,4 @@
 venv
+/*.egg-info
+debian-feed.json
+debian-feed.rss

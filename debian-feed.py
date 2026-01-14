@@ -31,7 +31,7 @@ def _get_page(url):
         page =  requests.get(url)
     except requests.exceptions.ConnectionError as err:
         # Warning since it's not fatal to the workflow unless it happens again.
-        log.warning('Error Connectiong to the server "%s": %s', url, err)
+        log.warning('Error connecting to the server "%s": %s', url, err)
         return None
     if not page or not page.ok:
         log.error('Could not get "%s" for this reason: %s', url, page.reason)
@@ -84,6 +84,8 @@ def load_rss(config):
     """
     parsed = feedparser.parse(config.get('rss_file'))
     feed = _init_feed()
+    if 'feed_link' in config:
+        feed.link(href=config.get('feed_link'))
     for item in parsed.entries:
         entry = feed.add_entry()
         entry.title(item.title)
